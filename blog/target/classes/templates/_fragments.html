@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<!--这个页面是用来抽取出 所有静态页面 相同的内容
+
+        如 ：  <head> 标签中引入资源的内容  ( 注意：有些地方引入的图片资源不是所有页面都有
+                                                    那么就要去前端页面手动改，不能使用 fragment 功能 ）
+        解释：
+
+            因为之前写前端页面的时候，没有考虑到要使用 Thymeleaf
+            所以在 引入文件是 都没有加上 th:
+
+            后端制作时，就需要把所有的资源文件的引入都加 th:
+
+            每个页面都去找，然后加上 th 的话，就特别麻烦
+
+            所以就抽取出一个 ,包含所有的引入，作为一个 片段
+
+            设置完成后 ， Thymeleaf 模板引擎一启动就会自动为每个html 页面替换
+
+            就不用每一个页面都去改 <head>标签的内容
+    -->
+
+
+
+
+
+
+<head th:fragment="head(title)">
+<!--　
+ 　这里就是使用 fragment 的重点
+　　
+    1.
+　　　这么标记之后，以后 Thymeleaf 引擎一启动，就会自动地把这个 <head> 标签的内容读取到
+        然后为每个 HTML 页面的 <head> 做替换
+
+    2.
+      head还可以传参，目的是 <title> 的内容可以随意改变的
+
+             fargment.html 中写 :
+                <head th:fragment="head(title)">
+                <title th:replace="${title}">
+
+                表示传进来的 title这个形参值 会修改 <title>标签的值
+
+
+             前端页面中 写 :
+                <head th:replace="_fragements :: head(~{::title})" >
+
+                   <title> 自己写的名称 </title>
+
+                </head>
+
+                这样在前端页面，<title>标签写的内容就会被作为 形参 ，并自动地 传给 Thymeleaf 模板引擎
+                然后创建出 想要的页面 效果
+
+
+    3.
+        除了 <head> 的资源文件引入是通用的，可以使用 fragment 功能之外
+             还有其他重复的内容也可以使用 fragment
+
+        比如 导航栏，底部内容 。...
+
+        但是具体的语法可能会不一样，详细看下面
+
+    4.
+        语法总结 : 虽然抽取不同的部分会用到不同的语法，传参也不同，但大致总结为
+
+            _fragments.html 中 :
+                    在要抽取的地方 写 th:fragment="xxx名字(yyy形参名)"
+
+            前端页面中 :
+                    被替换的地方 写 th:replace="_fragments :: xxx名字(yyy形参名)"
+
+         大概是这样，但这只是最基本的情况
+         具体的要去 Thymeleaf 网站上搜才能掌握
+
+-->
+
+
+    <meta charset="UTF-8">
+    <title th:replace="${title}"> Thymeleaf 提供的 fragments </title>
+
+　
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">　
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">　
+    <link rel="stylesheet" href="../static/css/me.css" th:href="@{/css/me.css}">　
+    <link rel="stylesheet" href="../static/css/animate.css" th:href="@{/css/animate.css}" >　
+    <link rel="stylesheet" href="../static/lib/prism/prism.css" th:href="@{/lib/prism/prism.css}">　
+    <link rel="stylesheet" href="../static/css/typo.css" th:href="@{/css/typo.css}" >　
+    <link rel="stylesheet" href="../static/lib/tocbot/tocbot.css" th:href="@{/lib/tocbot/tocbot.css}">
+
+</head>
+
+
+
+
+
+
+<body>
+
+
+        <!-- 导航栏 是可以重用的内容 -->
+
+        <!-- menu(n) 表示,当 n = 1 ,就会把 1 传过来给模板，然后就会 把 active 添加进标签，效果就是选中的效果 .  -->
+        <nav th:fragment="menu(n)" class="ui inverted attached segment m-padded-tb-mini m-margin-top-specific m-shadow-small">
+
+            <div class="ui container">
+                <div class="ui inverted secondary stackable menu">
+                    <h2 class="ui teal header item">Blog</h2>
+
+                    <a href="#" th:href="@{/}" class="m-item item m-mobile-hide" th:classappend="${n==1} ? 'active'"><i class=" home icon"></i>首页 </a>
+                    <a href="#" th:href="@{/types/-1}" class="m-item item m-mobile-hide" th:classappend="${n==2} ? 'active'"><i class=" idea icon"></i>分类 </a>
+                    <a href="#" th:href="@{/tags/-1}" class="m-item item m-mobile-hide" th:classappend="${n==3} ? 'active'"><i class=" tags icon"></i>标签 </a>
+                    <a href="#" th:href="@{/archives}" class="m-item item m-mobile-hide" th:classappend="${n==4} ? 'active'"><i class=" clone icon"></i>归档</a>
+                    <a href="#" th:href="@{/about}" class="m-item item m-mobile-hide" th:classappend="${n==5} ? 'active'"><i class=" info icon"></i>关于我 </a>
+
+                    <div class="right item m-mobile-hide m-white">
+                        <form name="search" action="#" th:action="@{/search}" method="post" target="_blank">
+                            <div class="ui icon inverted transparent input ">
+                                <input type="text" name="query" placeholder="Search...." th:value="${query}">
+                                <i onclick="document.forms['search'].submit()" class="search link icon"></i>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+
+
+            </div>
+
+            <a href="#" class="ui menu toggle black icon button m-right-top m-mobile-show">
+                <i class="sidebar icon"></i>
+            </a>
+        </nav>
+
+
+
+
+
+
+
+
+
+
+        <!--底部  footer 同样是可抽取的-->
+        <footer th:fragment="footer" class="ui inverted vertical segment m-padded-tb-massive m-shadow-small">
+            <div class="ui center aligned  container">
+
+                <div class="ui inverted divided stackable grid">
+
+                    <div class="three wide column">
+                        <div class="ui inverted link list">
+                            <div class="item">
+                                <img src="../static/images/QRcode.jpg"  th:src="@{/images/QRcode.jpg}" class="ui rounded image" alt="" style="width: 115px">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+
+                    <div class="three wide column">
+                        <h4 class="ui inverted header m-text-thin m-text-spaced ">最新博客</h4>
+
+                        <div id="newblog-container">
+                            <div class="ui inverted link list" th:fragment="newblogList">
+
+                                <a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" class="item" th:each="blog : ${newblogs}" th:text="${blog.title}">用户故事（User Story）</a>
+                                <!--/*-->
+                                <a href="#" class="item m-text-thin">用户故事（User Story）</a>
+                                <a href="#" class="item m-text-thin">用户故事（User Story）</a>
+                                <!--*/-->
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="three wide column">
+                        <h4 class="ui inverted header m-text-thin m-text-spaced ">联系我</h4>
+
+                        <div class="ui inverted link list">
+                            <a href="#" class="item" th:text="#{index.email}"> Email： xxxxxxx@qq.com  </a>
+                            <a href="#" class="item">  wechat: xx23e32342</a>
+                        </div>
+                    </div>
+
+
+
+                    <div class="seven wide column">
+                        <h4 class="ui inverted header m-text-thin m-text-spaced ">最新博客</h4>
+
+                        <p class="m-text-thin m-text-spaced m-opactiy-mini">这是我的个人博客，作为起点，算是第一个完整的项目</p>
+                    </div>
+                </div>
+
+
+                <div class="ui inverted section divider">
+                </div>
+                <p class="m-text-thin m-text-spaced m-opactiy-mini">Copyright 2020-2021  blog </p>
+
+            </div>
+
+        </footer>
+
+
+
+
+        <!-- 引入 js 文件的内容 同样可以进行抽取-->
+        <th:block th:fragment="script">
+
+            <!--引入 Semantic ui 框架所需的 js 包-->
+            <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+
+
+            <!--引入 代码高亮的 js-->
+            <script src="../static/lib/prism/prism.js" th:src="@{/lib/prism/prism.js}"></script>
+
+            <!--目录生成的js-->
+            <script src="../static/lib/tocbot/tocbot.min.js" th:src="@{/lib/tocbot/tocbot.min.js}"></script>
+
+
+            <!--引入生成二维码链接的 js 文件-->
+            <script src="../static/lib/qrcode/qrcode.min.js" th:src="@{/lib/qrcode/qrcode.min.js}"></script>
+
+            <!--引入 平滑滚动 js-->
+            <script src="//cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js"></script>
+
+            <!--引入 滚动侦测 js-->
+            <script src="../static/lib/waypoints/jquery.waypoints.min.js" th:src="@{/lib/waypoints/jquery.waypoints.min.js}"></script>
+
+
+            <!--
+                写这段代码，才会去访问 IndexController 并拿到最新博客 Blog 对象
+            -->
+            <script>
+                $('#newblog-container').load(/*[[@{/footer/newblog}]]*/"/footer/newblog");
+            </script>
+
+        </th:block>
+</body>
+</html>

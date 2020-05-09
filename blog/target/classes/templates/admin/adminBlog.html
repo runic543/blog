@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="admin/_fragments :: head(~{::title})">
+    <meta charset="UTF-8">
+
+    <!--为了让移动端预览更好看，设置下面代码-->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <title>后台管理博客页</title>
+
+    <!--引入 Semantic ui 框架资源-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
+
+    <!--引入自己写的 css-->
+    <link rel="stylesheet" href="../../static/css/me.css">
+
+</head>
+<body>
+    <!--导航栏-->
+    <nav th:replace="admin/_fragments :: menu(1)"  class="ui inverted attached segment m-padded-tb-mini m-shadow-small">
+
+        <div class="ui container">
+            <div class="ui inverted secondary stackable menu">
+                <h2 class="ui teal header item">后台管理</h2>
+
+                <a href="#" class="active m-item item m-mobile-hide"><i class=" home icon"></i>博客 </a>
+                <a href="#" class=" m-item item m-mobile-hide"><i class=" idea icon"></i>分类 </a>
+                <a href="#" class="m-item item m-mobile-hide"><i class=" tags icon"></i>标签 </a>
+
+                <div class="right m-item m-mobile-hide menu ">
+                    <div class="ui dropdown item">
+                        <div class="text">
+                            <img class="ui avatar image" src="https://picsum.photos/id/1/80/90">
+                            你爹
+                        </div>
+
+
+                        <i class="dropdown icon"></i>
+
+                        <div class="menu">
+                            <a href="#" class="item">注销</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <a href="#" class="ui menu toggle black icon button m-right-top m-mobile-show">
+            <i class="sidebar icon"></i>
+        </a>
+    </nav>
+
+
+
+
+
+
+
+    <div class="ui attached pointing menu">
+        <div class="ui container">
+            <div class="right menu">
+
+            <a href="#" th:href="@{/admin/blogs/input}" class="item">发布</a>
+            <a href="#"  th:href="@{/admin/blogs}"   class="  active item teal ">列表</a>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!--中间内容-->
+    <div class= "m-container-small m-padded-tb-large">
+            <div class="ui container">
+
+
+
+
+
+                <!--
+                       注意 ： 这里原本是一个 from 表单，<form action="#" method="post" class="ui secondary segment form">
+                                但是由于我们在做 上一页/下一页 按钮时使用 ajax 向后端发送数据，
+                                所以干脆就让 表单 变成一个 div，
+                                点击 搜索 按钮时，也去调用 js 方法，让其变成 ajax 请求方式
+
+                                步骤： 要去给 搜索按钮加上 type="button" id="search-btn"
+                                        目的是为了让 js 代码可以找到这个标签，并触发点击事件
+                    -->
+                <div   class="ui secondary segment form">
+
+
+                        <input type="hidden" name="page" >
+                        <!--
+                            (   笔记 2 )
+                                这里对应下面的 上一页下一页 按钮那，在这里写一个隐藏的 input 框用来放 page 对象的当前页属性值
+                                  "键名"就叫 page                -->
+
+
+
+                        <div class=" inline fields">
+
+                            <!-- 标题框 -->
+                            <div class="field">
+                                <input type="text" name="title" placeholder="标题">
+                            </div>
+
+
+                            <!-- 分类框
+
+                                这里的数据要从数据库 动态获取
+                                获取 types 分类的数据，详细去 后端控制器类 中看
+                            -->
+                            <div class="field">
+
+                                <div class="ui labeled action input">
+
+                                    <div class="ui type selection dropdown">
+
+                                        <input type="hidden" name="typeId">
+
+                                        <i class="dropdown icon"></i>
+
+                                        <div class="default text">分类</div>
+
+                                        <div class="menu">
+                                            <!--
+                                                这一步是从后端 获取传过来的 type 分类信息
+
+                                                th:each="type : ${types}"  :  使用 th:each 遍历显示出来
+
+                                                th:data-value="${type.id}" :   遍历地给自定义属性 data-value 赋值
+
+                                                th:text="${type.name}"     :  遍历地把分类名称 填充到 下拉框
+
+
+                                            -->
+                                            <div th:each="type : ${types}" class="item" data-value="1" th:data-value="${type.id}" th:text="${type.name}">
+                                                错误日志
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <button id="clear-btn" class="ui compact button">clear</button>
+
+                                </div>
+
+
+
+
+                            </div>
+
+                            <!-- 推荐框 -->
+                            <div class="field">
+                                <div class="ui checkbox">
+                                    <input type="checkbox" id="recommend" name="recommend">
+                                    <label for="recommend">推荐</label>
+                                </div>
+                            </div>
+
+                            <!-- 搜索按钮  -->
+                            <div class="field">
+                                <button type="button" id="search-btn" class="ui    mini   teal  basic button">
+                                    <i class="search icon"></i>
+                                    搜索
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                <!--
+                    注意，这个 table-container 包的是 <table> 不是 <from>
+
+                     最下面 js 那里有详细解释
+
+                    简单讲就是，后端返回的 页面片段 会被 Thymeleaf 引擎自动渲染并填充到 <table-container> 这个标签里
+                    而我们的目标是为了让 <from> 里的搜索框内容 保持，而更改 <table>标签内容
+                    如果 <tabel-container> 包的是 <form> 那么就会把 <from> 直接变成 <table>( 视图解析器渲染填充   )
+                -->
+                <div id="table-container">
+
+                    <!--
+                          (     笔记 5  )
+                            th:fragment="bloglist" 表，定义 table 标签为该页面的一个片段，名字为 blogList
+                            详细看后端控制器类中的 search() 方法
+                        -->
+                    <table th:fragment="blogList" class="ui compact teal table">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>标题</th>
+                                    <th>类型</th>
+                                    <th>推荐</th>
+                                    <th>状态</th>
+                                    <th>更新时间</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                                <!--和 types.html 相同，循环拿到后端传过来的值-->
+                                <tr th:each="blog,iterStat : ${page.content}">
+                                    <td th:text="${iterStat.count}">1</td>
+                                    <td th:text="${blog.title}">刻意练习清单</td>
+                                    <td th:text="${blog.type.name}">认知升级</td>
+                                    <td th:text="${blog.recommend} ? '是':'否'">是</td>
+                                    <td th:text="${blog.published} ? '发布':'草稿'">草稿</td>
+                                    <td th:text="${blog.updateTime}">2017-10-02 09:45</td>
+
+                                    <td>
+                                        <!--这一步也和 types.html 中相同-->
+                                        <a href="#" th:href="@{/admin/blogs/{id}/input(id=${blog.id})}" class="ui mini teal basic button">编辑</a>
+                                        <a href="#" th:href="@{/admin/blogs/{id}/delete(id=${blog.id})}" class="ui mini red basic button">删除</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+
+                            <tfoot>
+                                <tr>
+                                    <th colspan="7">
+                                                                            <!-- 如果 总页数的值 大于 1  ，才会显示-->
+                                        <div class="ui mini pagination menu" th:if="${page.totalPages}>1" >
+
+                                            <!-- ( 笔记 1 )
+
+                                                   注意问题 ：
+                                                            如果 上一页/下一页按钮还是和之前 types.html 那样写的话 ：
+
+                                                            th:href="@{/admin/blos(page=${page.number}-1)}" >上一页 </>
+
+                                                            那么，点击按钮之后，请求只会把 page 的值传递给后端的控制器类
+                                                            然后，后端处理完 page 数据， 就会重新访问一次这个页面
+
+                                                            这样就导致 搜索框 里的内容会被情况，而我们要的效果是
+                                                            搜索框的内容不变，只变动表格里的翻页内容
+
+
+                                                   所以思路是 ：
+                                                            舍弃之前 href 方式传 page 了， 改为 使用 from 表单提交的方式传 page 到后端
+                                                            而且还要使用 ajax 的方式 提交，这样 提交的时候 就不会影响到 搜索框
+
+                                                            后端控制器类中 return 的时候，不再返回整个 页面
+                                                            而是仅返回 该页面 的 中间列表部分 ( 这里使用到 Thymeleaf 抽取模板的技术 )
+                                                            这样 获取后端数据的时候 也不会影响到 搜索框
+
+
+                                                            因此就要去之前写的 from 表单中加一个隐藏的 <input> ，为了动态地把 page 数据放进去
+
+                                                            然后去 js 中写一个方法 page()，动态获取 page 值，并用 ajax 方式提交给后端
+
+                                                            在 点击 上一页/下一页 按钮时，调用自己写的 JS 的方法 page()
+                                                            以 ajax 方式提交 from 表单, 把 page页码值 都传给后端
+                                            -->
+
+                                                            <!--
+                                                                    data-page 是自定义属性，用来放 当前页码的值. js 代码的 page() 方法中有用到
+
+                                                                    th:attr 是 Thymeleaf 中自定义属性 标明格式
+                                                          -->
+                                            <a onclick="page(this)" th:attr="data-page=${page.number}-1" class="item" th:unless="${page.first}">上一页</a>
+
+                                            <a onclick="page(this)" th:attr="data-page=${page.number}+1" class=" item" th:unless="${page.last}">下一页</a>
+
+
+                                        </div>
+                                        <a href="#" th:href="@{/admin/blogs/input}" class="ui mini right floated teal basic button">新增</a>
+                                    </th>
+                                </tr>
+                            </tfoot>
+                        </table>
+
+
+
+                    <div class="ui success message" th:unless="${#strings.isEmpty(message)}">
+                        <i class="close icon"></i>
+                        <div class="header">提示：</div>
+                        <p th:text="${message}">恭喜，操作成功！</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+    </div>
+
+
+
+
+
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+    <!--底部  footer-->
+    <footer th:replace="admin/_fragments :: footer" class="ui inverted vertical segment m-padded-tb-massive m-shadow-small">
+        <div class="ui center aligned  container">
+
+            <div class="ui inverted divided stackable grid">
+
+                <div class="three wide column">
+                    <div class="ui inverted link list">
+                        <div class="item">
+                           <img src="../../static/images/QRcode.jpg" class="ui rounded image" alt="" style="width: 115px">
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+
+                <div class="three wide column">
+                    <h4 class="ui inverted header m-text-thin m-text-spaced ">最新博客</h4>
+
+                    <div class="ui inverted link list">
+                            <a href="#" class="item">用户故事 ( User Story)  </a>
+                            <a href="#" class="item">用户故事 ( User Story)</a>
+                            <a href="#" class="item">用户故事 ( User Story)</a>
+                    </div>
+                </div>
+
+
+
+                <div class="three wide column">
+                    <h4 class="ui inverted header m-text-thin m-text-spaced ">联系我</h4>
+
+                    <div class="ui inverted link list">
+                        <a href="#" class="item"> Email： xxxxxxx@qq.com  </a>
+                        <a href="#" class="item">  wechat: xx23e32342</a>
+                    </div>
+                </div>
+
+
+
+                <div class="seven wide column">
+                    <h4 class="ui inverted header m-text-thin m-text-spaced ">最新博客</h4>
+
+                    <p class="m-text-thin m-text-spaced m-opactiy-mini">这是我的个人博客，作为起点，算是第一个完整的项目</p>
+                </div>
+            </div>
+
+
+              <div class="ui inverted section divider">
+              </div>
+                  <p class="m-text-thin m-text-spaced m-opactiy-mini">Copyright 2020-2021  blog </p>
+
+        </div>
+
+    </footer>
+
+
+<!--引入 Semantic ui 框架所需的 js 包-->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+
+ <script>
+
+
+     $('.menu.toggle').click(function () {
+        $('.m-item').toggleClass('m-mobile-hide');
+     });
+
+     $('.ui.dropdown').dropdown({
+         on: 'hover'
+     });
+
+
+     //消息提示关闭初始化
+     $('.message .close')
+         .on('click', function () {
+             $(this)
+                 .closest('.message')
+                 .transition('fade');
+         });
+
+
+
+     //对应上面的 上一页/下一页  按钮，在 js 中写一个 page() 方法
+     //  作用就是 拿到 page 对象中的 当前页码值，并赋值给 from 表单中的 <input name="page">这个隐藏框
+     //           然后一并把这些值发送给后端
+     function page(obj) {
+
+         $("[name='page']").val($(obj).data("page"));
+         /*
+                (   笔记 3 )
+
+                $("[name='page']").val()  获取到 name 为 page 的标签，就是那个 from 表单中的 隐藏 input 标签
+                                            然后为其进行赋值
+
+                $(obj).data("page")   获取到 obj 对象，并同时获取该对象的 page 属性值
+                                        因为上面的 html 代码写的是 ：onclick="page(this)" th:attr="data-page=${page.number}-1"
+                                        所以这里 obj 获取的就是这个 标签本身，而标签里又自定义了属性 data-page
+                                        data("page") 就是专门拿自定义属性的
+                                        所以就能获取到 当前页码值
+
+               这两个结合起来就是为隐藏的 input 标签赋上 page 值
+          */
+
+
+
+
+         //给 搜索框层 的 input 附上 page值 后
+         //  接下来就要把 搜索框中的 其他值和 page 一起用 Ajax 方式发送给 后端
+         // 直接用下面写好的 loaddata() 方法
+         loaddata();
+
+
+     }
+
+
+     /*
+            (  笔记 4 )
+
+            由于要使用 ajax 方式提交 from 中的数据，所以不能使用表单的 post 来提交
+                而是要用 js 写一个提交方法
+      */
+      function loaddata() {
+
+          //
+          //       $("#table-container").load() :
+          //                    获取/锁定 id = table-container的这一个标签，并执行 load 方法
+          //                    load 方法会向后端控制器类的方法，以 ajax 方式发送数据
+          //                    然后接收 后端 发过来的 视图解析器 对象
+          //                    模板引擎会 自动渲染填充页面(片段 ) 到 这个标签
+          /*                    这就是为啥 <table-container> 包的是 <table> 而不是 <from>                                                                            */
+          //
+          //       load( url , data ) :
+          //                    这就是之前学的使用原生 js 代码实现 ajax 请求的 load() 方法
+          //
+          //                         这是 Thymeleaf 模板写 url 的格式
+          $("#table-container").load(/*[[@{/admin/blogs/search}]]*/"/admin/blogs/search",{
+              title : $("[name='title']").val(),
+              typeId : $("[name='typeId']").val(),
+              recommend : $("[name='recommend']").prop('checked'),
+              page : $("[name='page']").val()
+          });
+      }
+
+
+
+
+      /*      (  笔记 6   )
+
+            由于 from 变为 div ，为了让点击 搜索 按钮也可以使用 ajax 的方式提交数据
+            所以要写这个 方法
+       */
+     $("#search-btn").click(function () {
+
+         $("[name='page']").val(0);
+
+         loaddata();
+     });
+
+
+
+
+     $('#clear-btn')
+         .on('click', function() {
+             $('.ui.type.dropdown')
+                 .dropdown('clear')
+             ;
+         });
+
+
+ </script>
+</body>
+</html>

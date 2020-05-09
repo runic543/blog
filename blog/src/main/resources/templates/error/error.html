@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>错误</title>
+</head>
+<body>
+
+      <h1>在页面上输出错误信息，这么做的 优点 是可以不用每次出现错误都去 服务器 后台看日志
+          在页面上就可以看到了 异常
+
+          注意是要在浏览器控制台上才能看到 F12</h1>
+
+
+      <!--在页面上输出错误信息，这么做的 优点 是可以不用每次出现错误都去 服务器 后台看日志
+            在页面上就可以看到了 异常
+
+            注意是要在浏览器控制台上才能看到 F12
+        -->
+
+      <div>
+            <!--
+               untext表示转义 .
+               th:utext="'&lt;!--'" 表示 （<!--） 注释的左半边标记
+                                     remove 表示移除
+                                     th:remove="tag" 表示把 <div>这个标签移除
+                                                                              (总的来说就是注释掉这些信息，让其在 F12 出现)                       -->
+          <div th:utext="'&lt;!--'" th:remove="tag"></div>
+
+          <div th:utext="'Failed Request URL : ' + ${url}" th:remove="tag">
+          </div>
+          <div th:utext="'Exception message : ' + ${exception.message}"
+               th:remove="tag"></div>
+          <ul th:remove="tag">
+              <li th:each="st : ${exception.stackTrace}" th:remove="tag"><span
+                      th:utext="${st}" th:remove="tag"></span></li>
+          </ul>
+          <div th:utext="'--&gt;'" th:remove="tag"></div>
+            <!--  注释的右半边标记   -->
+      </div>
+
+      <!--  此错误显示 是 SpringBoot 推荐的-->
+
+
+</body>
+</html>

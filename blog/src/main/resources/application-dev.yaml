@@ -1,0 +1,19 @@
+spring:
+
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/blog?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    username: root                                                                    # 此处时区要加上 否则运行失败
+    password: 13691961209
+
+  jpa:
+    hibernate:
+      ddl-auto: update   #   update 表示每次启动都会去看数据库的数据和实体类是否一样，不一样就会更新( 更新什么地方的不清楚  )
+    show-sql: true     #   把 SQL 语句输出在控制台和日志中
+
+logging:
+    level:
+      root: info  #日志级别， springBoot 原始设定是 info 级别，还可以设置为 warn 较高的级别
+      cn.runic.blog.blog: debug   #指定自己包的名字  ??!
+    file:
+      path: log/blog-dev.log   # 日志文件的位置

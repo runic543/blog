@@ -1,0 +1,6 @@
+2020-04-19 22:09:45.922  INFO 10804 --- [restartedMain] cn.runic.blog.blog.BlogApplication       : Starting BlogApplication on USER-20160707AQ with PID 10804 (F:\IDEA\testdemo\blog\target\classes started by Administrator in F:\IDEA\testdemo\blog)
+2020-04-19 22:09:45.922  INFO 10804 --- [restartedMain] cn.runic.blog.blog.BlogApplication       : The following profiles are active: pro
+2020-04-19 22:09:46.530  WARN 10804 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[cn.runic.blog.blog]' package. Please check your configuration.
+2020-04-19 22:09:47.388  WARN 10804 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-04-19 22:09:47.700  WARN 10804 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-04-19 22:09:48.012  INFO 10804 --- [restartedMain] cn.runic.blog.blog.BlogApplication       : Started BlogApplication in 2.528 seconds (JVM running for 3.163)

@@ -1,0 +1,307 @@
+2020-05-03 14:29:34.638  INFO 5808 --- [restartedMain] cn.runic.blog.blog.BlogApplication       : Starting BlogApplication on USER-20160707AQ with PID 5808 (F:\IDEA\testdemo\blog\target\classes started by Administrator in F:\IDEA\testdemo\blog)
+2020-05-03 14:29:34.669 DEBUG 5808 --- [restartedMain] cn.runic.blog.blog.BlogApplication       : Running with Spring Boot v2.2.6.RELEASE, Spring v5.2.5.RELEASE
+2020-05-03 14:29:34.669  INFO 5808 --- [restartedMain] cn.runic.blog.blog.BlogApplication       : The following profiles are active: dev
+2020-05-03 14:29:34.763  INFO 5808 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in F:\maven_repository\org\glassfish\jaxb\jaxb-runtime\2.3.2\jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/F:/maven_repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.xml.bind-api-2.3.2.jar,file:/F:/maven_repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/txw2-2.3.2.jar,file:/F:/maven_repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/istack-commons-runtime-3.0.8.jar,file:/F:/maven_repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/stax-ex-1.8.1.jar,file:/F:/maven_repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/FastInfoset-1.2.16.jar,file:/F:/maven_repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.activation-api-1.2.1.jar
+2020-05-03 14:29:34.763  INFO 5808 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-05-03 14:29:34.763  INFO 5808 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-05-03 14:29:36.292  INFO 5808 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-03 14:29:36.417  INFO 5808 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 115ms. Found 5 JPA repository interfaces.
+2020-05-03 14:29:36.666  WARN 5808 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[cn.runic.blog.blog]' package. Please check your configuration.
+2020-05-03 14:29:37.789  INFO 5808 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-05-03 14:29:37.805  INFO 5808 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-03 14:29:37.805  INFO 5808 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-05-03 14:29:37.961  INFO 5808 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-03 14:29:37.961  INFO 5808 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3198 ms
+2020-05-03 14:29:38.335  INFO 5808 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-03 14:29:38.491  INFO 5808 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-05-03 14:29:38.898  INFO 5808 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-05-03 14:29:39.305  INFO 5808 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-05-03 14:29:39.305  WARN 5808 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-05-03 14:29:39.554  INFO 5808 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-05-03 14:29:39.633  INFO 5808 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2020-05-03 14:29:41.756  INFO 5808 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-03 14:29:41.756  INFO 5808 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-03 14:29:41.803  INFO 5808 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-05-03 14:29:43.113  WARN 5808 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-03 14:29:43.441  INFO 5808 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-03 14:29:43.565  INFO 5808 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-05-03 14:29:44.548  INFO 5808 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-05-03 14:29:44.548  INFO 5808 --- [restartedMain] cn.runic.blog.blog.BlogApplication       : Started BlogApplication in 10.667 seconds (JVM running for 13.485)
+2020-05-03 14:30:05.640  INFO 5808 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-03 14:30:05.640  INFO 5808 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-05-03 14:30:05.657  INFO 5808 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 17 ms
+2020-05-03 14:30:14.721  INFO 5808 --- [http-nio-8080-exec-9] cn.runic.blog.blog.aspect.LogAspect      : Request : RequestLog{url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='cn.runic.blog.blog.controller.IndexController.index', args=[Page request [number: 0, size 8, sort: updateTime: DESC], {}]}
+2020-05-03 14:30:14.752  WARN 5808 --- [http-nio-8080-exec-9] org.hibernate.orm.deprecation            : HHH90000016: Found use of deprecated 'collection property' syntax in HQL/JPQL query [t.blogs.size]; use collection function syntax instead [size(t.blogs)].
+2020-05-03 14:30:14.752  WARN 5808 --- [http-nio-8080-exec-9] org.hibernate.orm.deprecation            : HHH90000016: Found use of deprecated 'collection property' syntax in HQL/JPQL query [t.blogs.size]; use collection function syntax instead [size(t.blogs)].
+2020-05-03 14:30:14.767  INFO 5808 --- [http-nio-8080-exec-9] cn.runic.blog.blog.aspect.LogAspect      : ------------doAfter--------------
+2020-05-03 14:30:14.767  INFO 5808 --- [http-nio-8080-exec-9] cn.runic.blog.blog.aspect.LogAspect      : Result : index 
+2020-05-03 14:30:23.129  INFO 5808 --- [http-nio-8080-exec-5] cn.runic.blog.blog.aspect.LogAspect      : Request : RequestLog{url='http://localhost:8080/search', ip='0:0:0:0:0:0:0:1', classMethod='cn.runic.blog.blog.controller.IndexController.search', args=[Page request [number: 0, size 8, sort: updateTime: DESC], fsdf, {}]}
+2020-05-03 14:30:23.145  INFO 5808 --- [http-nio-8080-exec-5] cn.runic.blog.blog.aspect.LogAspect      : ------------doAfter--------------
+2020-05-03 14:30:23.145  INFO 5808 --- [http-nio-8080-exec-5] cn.runic.blog.blog.aspect.LogAspect      : Result : search 
+2020-05-03 14:30:46.108  INFO 5808 --- [http-nio-8080-exec-3] cn.runic.blog.blog.aspect.LogAspect      : Request : RequestLog{url='http://localhost:8080/blog/52', ip='0:0:0:0:0:0:0:1', classMethod='cn.runic.blog.blog.controller.IndexController.blog', args=[52, {}]}
+2020-05-03 14:30:46.170  INFO 5808 --- [http-nio-8080-exec-3] cn.runic.blog.blog.aspect.LogAspect      : ------------doAfter--------------
+2020-05-03 14:30:46.170  INFO 5808 --- [http-nio-8080-exec-3] cn.runic.blog.blog.aspect.LogAspect      : Result : blog 
+2020-05-03 14:30:46.264 ERROR 5808 --- [http-nio-8080-exec-6] c.r.b.b.h.ControllerExceptionHandler     : Request URL : http://localhost:8080/blog/e3r3 ,Exception : {}
+
+org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "e3r3"
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.resolveArgument(AbstractNamedValueMethodArgumentResolver.java:133)
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:121)
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:167)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:134)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.NumberFormatException: For input string: "e3r3"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Long.parseLong(Long.java:589)
+	at java.lang.Long.valueOf(Long.java:803)
+	at org.springframework.util.NumberUtils.parseNumber(NumberUtils.java:214)
+	at org.springframework.beans.propertyeditors.CustomNumberEditor.setAsText(CustomNumberEditor.java:115)
+	at org.springframework.beans.TypeConverterDelegate.doConvertTextValue(TypeConverterDelegate.java:429)
+	at org.springframework.beans.TypeConverterDelegate.doConvertValue(TypeConverterDelegate.java:402)
+	at org.springframework.beans.TypeConverterDelegate.convertIfNecessary(TypeConverterDelegate.java:155)
+	at org.springframework.beans.TypeConverterSupport.convertIfNecessary(TypeConverterSupport.java:73)
+	at org.springframework.beans.TypeConverterSupport.convertIfNecessary(TypeConverterSupport.java:53)
+	at org.springframework.validation.DataBinder.convertIfNecessary(DataBinder.java:693)
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.resolveArgument(AbstractNamedValueMethodArgumentResolver.java:125)
+	... 47 common frames omitted
+
+2020-05-03 14:30:46.279  WARN 5808 --- [http-nio-8080-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "e3r3"]
+2020-05-03 14:30:46.935  INFO 5808 --- [http-nio-8080-exec-7] cn.runic.blog.blog.aspect.LogAspect      : Request : RequestLog{url='http://localhost:8080/comments/52', ip='0:0:0:0:0:0:0:1', classMethod='cn.runic.blog.blog.controller.CommentController.comments', args=[52, {}]}
+2020-05-03 14:30:46.966  INFO 5808 --- [http-nio-8080-exec-7] cn.runic.blog.blog.aspect.LogAspect      : ------------doAfter--------------
+2020-05-03 14:30:46.966  INFO 5808 --- [http-nio-8080-exec-7] cn.runic.blog.blog.aspect.LogAspect      : Result : blog :: commentList 
+2020-05-03 14:31:06.887  INFO 5808 --- [http-nio-8080-exec-8] cn.runic.blog.blog.aspect.LogAspect      : Request : RequestLog{url='http://localhost:8080/comments', ip='0:0:0:0:0:0:0:1', classMethod='cn.runic.blog.blog.controller.CommentController.post', args=[Comment{id=null, nickname='dad', email='123@ac.com', content='safafgd', avatar='null', createTime=null, blog=Blog{id=52, title='null', content='null', firstPicture='null', flag='null', views=null, appreciation=false, shareStatement=false, commentabled=false, published=false, recommend=false, createTime=null, updateTime=null, type=null, tags=[], user=null, comments=[], tagIds='null', description='null'}, replyComments=null, parentComment=Comment{id=-1, nickname='null', email='null', content='null', avatar='null', createTime=null, blog=null, replyComments=null, parentComment=null, adminComment=false}, adminComment=false}, org.apache.catalina.session.StandardSessionFacade@e4ce44]}
+2020-05-03 14:31:06.949  INFO 5808 --- [http-nio-8080-exec-8] cn.runic.blog.blog.aspect.LogAspect      : ------------doAfter--------------
+2020-05-03 14:31:06.949  INFO 5808 --- [http-nio-8080-exec-8] cn.runic.blog.blog.aspect.LogAspect      : Result : redirect:/comments/52 
+2020-05-03 14:31:06.981  INFO 5808 --- [http-nio-8080-exec-3] cn.runic.blog.blog.aspect.LogAspect      : Request : RequestLog{url='http://localhost:8080/comments/52', ip='0:0:0:0:0:0:0:1', classMethod='cn.runic.blog.blog.controller.CommentController.comments', args=[52, {}]}
+2020-05-03 14:31:06.981  INFO 5808 --- [http-nio-8080-exec-3] cn.runic.blog.blog.aspect.LogAspect      : ------------doAfter--------------
+2020-05-03 14:31:06.981  INFO 5808 --- [http-nio-8080-exec-3] cn.runic.blog.blog.aspect.LogAspect      : Result : blog :: commentList 
+2020-05-03 14:31:10.132  INFO 5808 --- [http-nio-8080-exec-9] cn.runic.blog.blog.aspect.LogAspect      : Request : RequestLog{url='http://localhost:8080/comments', ip='0:0:0:0:0:0:0:1', classMethod='cn.runic.blog.blog.controller.CommentController.post', args=[Comment{id=null, nickname='dad', email='123@ac.com', content='fdsgfdg', avatar='null', createTime=null, blog=Blog{id=52, title='null', content='null', firstPicture='null', flag='null', views=null, appreciation=false, shareStatement=false, commentabled=false, published=false, recommend=false, createTime=null, updateTime=null, type=null, tags=[], user=null, comments=[], tagIds='null', description='null'}, replyComments=null, parentComment=Comment{id=57, nickname='null', email='null', content='null', avatar='null', createTime=null, blog=null, replyComments=null, parentComment=null, adminComment=false}, adminComment=false}, org.apache.catalina.session.StandardSessionFacade@e4ce44]}
+2020-05-03 14:31:10.147  INFO 5808 --- [http-nio-8080-exec-9] cn.runic.blog.blog.aspect.LogAspect      : ------------doAfter--------------
+2020-05-03 14:31:10.147  INFO 5808 --- [http-nio-8080-exec-9] cn.runic.blog.blog.aspect.LogAspect      : Result : redirect:/comments/52 
+2020-05-03 14:31:10.163  INFO 5808 --- [http-nio-8080-exec-2] cn.runic.blog.blog.aspect.LogAspect      : Request : RequestLog{url='http://localhost:8080/comments/52', ip='0:0:0:0:0:0:0:1', classMethod='cn.runic.blog.blog.controller.CommentController.comments', args=[52, {}]}
+2020-05-03 14:31:10.179  INFO 5808 --- [http-nio-8080-exec-2] cn.runic.blog.blog.aspect.LogAspect      : ------------doAfter--------------
+2020-05-03 14:31:10.179  INFO 5808 --- [http-nio-8080-exec-2] cn.runic.blog.blog.aspect.LogAspect      : Result : blog :: commentList 
+2020-05-03 14:31:12.456  INFO 5808 --- [http-nio-8080-exec-10] cn.runic.blog.blog.aspect.LogAspect      : Request : RequestLog{url='http://localhost:8080/comments', ip='0:0:0:0:0:0:0:1', classMethod='cn.runic.blog.blog.controller.CommentController.post', args=[Comment{id=null, nickname='dad', email='123@ac.com', content='dasfgewgt', avatar='null', createTime=null, blog=Blog{id=52, title='null', content='null', firstPicture='null', flag='null', views=null, appreciation=false, shareStatement=false, commentabled=false, published=false, recommend=false, createTime=null, updateTime=null, type=null, tags=[], user=null, comments=[], tagIds='null', description='null'}, replyComments=null, parentComment=Comment{id=-1, nickname='null', email='null', content='null', avatar='null', createTime=null, blog=null, replyComments=null, parentComment=null, adminComment=false}, adminComment=false}, org.apache.catalina.session.StandardSessionFacade@e4ce44]}
+2020-05-03 14:31:12.472  INFO 5808 --- [http-nio-8080-exec-10] cn.runic.blog.blog.aspect.LogAspect      : ------------doAfter--------------
+2020-05-03 14:31:12.472  INFO 5808 --- [http-nio-8080-exec-10] cn.runic.blog.blog.aspect.LogAspect      : Result : redirect:/comments/52 
+2020-05-03 14:31:12.472  INFO 5808 --- [http-nio-8080-exec-4] cn.runic.blog.blog.aspect.LogAspect      : Request : RequestLog{url='http://localhost:8080/comments/52', ip='0:0:0:0:0:0:0:1', classMethod='cn.runic.blog.blog.controller.CommentController.comments', args=[52, {}]}
+2020-05-03 14:31:12.487  INFO 5808 --- [http-nio-8080-exec-4] cn.runic.blog.blog.aspect.LogAspect      : ------------doAfter--------------
+2020-05-03 14:31:12.487  INFO 5808 --- [http-nio-8080-exec-4] cn.runic.blog.blog.aspect.LogAspect      : Result : blog :: commentList 
+2020-05-03 14:31:23.564  INFO 5808 --- [http-nio-8080-exec-6] cn.runic.blog.blog.aspect.LogAspect      : Request : RequestLog{url='http://localhost:8080/comments', ip='0:0:0:0:0:0:0:1', classMethod='cn.runic.blog.blog.controller.CommentController.post', args=[Comment{id=null, nickname='afe', email='123@ac.com', content='dsadgds', avatar='null', createTime=null, blog=Blog{id=52, title='null', content='null', firstPicture='null', flag='null', views=null, appreciation=false, shareStatement=false, commentabled=false, published=false, recommend=false, createTime=null, updateTime=null, type=null, tags=[], user=null, comments=[], tagIds='null', description='null'}, replyComments=null, parentComment=Comment{id=-1, nickname='null', email='null', content='null', avatar='null', createTime=null, blog=null, replyComments=null, parentComment=null, adminComment=false}, adminComment=false}, org.apache.catalina.session.StandardSessionFacade@e4ce44]}
+2020-05-03 14:31:23.564  INFO 5808 --- [http-nio-8080-exec-6] cn.runic.blog.blog.aspect.LogAspect      : ------------doAfter--------------
+2020-05-03 14:31:23.564  INFO 5808 --- [http-nio-8080-exec-6] cn.runic.blog.blog.aspect.LogAspect      : Result : redirect:/comments/52 
+2020-05-03 14:31:23.579  INFO 5808 --- [http-nio-8080-exec-7] cn.runic.blog.blog.aspect.LogAspect      : Request : RequestLog{url='http://localhost:8080/comments/52', ip='0:0:0:0:0:0:0:1', classMethod='cn.runic.blog.blog.controller.CommentController.comments', args=[52, {}]}
+2020-05-03 14:31:23.595  INFO 5808 --- [http-nio-8080-exec-7] cn.runic.blog.blog.aspect.LogAspect      : ------------doAfter--------------
+2020-05-03 14:31:23.595  INFO 5808 --- [http-nio-8080-exec-7] cn.runic.blog.blog.aspect.LogAspect      : Result : blog :: commentList 
+2020-05-03 14:31:35.733  INFO 5808 --- [http-nio-8080-exec-5] cn.runic.blog.blog.aspect.LogAspect      : Request : RequestLog{url='http://localhost:8080/blog/52', ip='0:0:0:0:0:0:0:1', classMethod='cn.runic.blog.blog.controller.IndexController.blog', args=[52, {}]}
+2020-05-03 14:31:35.733  INFO 5808 --- [http-nio-8080-exec-5] cn.runic.blog.blog.aspect.LogAspect      : ------------doAfter--------------
+2020-05-03 14:31:35.733  INFO 5808 --- [http-nio-8080-exec-5] cn.runic.blog.blog.aspect.LogAspect      : Result : blog 
+2020-05-03 14:31:35.811 ERROR 5808 --- [http-nio-8080-exec-7] c.r.b.b.h.ControllerExceptionHandler     : Request URL : http://localhost:8080/blog/e3r3 ,Exception : {}
+
+org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "e3r3"
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.resolveArgument(AbstractNamedValueMethodArgumentResolver.java:133)
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:121)
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:167)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:134)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.NumberFormatException: For input string: "e3r3"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Long.parseLong(Long.java:589)
+	at java.lang.Long.valueOf(Long.java:803)
+	at org.springframework.util.NumberUtils.parseNumber(NumberUtils.java:214)
+	at org.springframework.beans.propertyeditors.CustomNumberEditor.setAsText(CustomNumberEditor.java:115)
+	at org.springframework.beans.TypeConverterDelegate.doConvertTextValue(TypeConverterDelegate.java:429)
+	at org.springframework.beans.TypeConverterDelegate.doConvertValue(TypeConverterDelegate.java:402)
+	at org.springframework.beans.TypeConverterDelegate.convertIfNecessary(TypeConverterDelegate.java:155)
+	at org.springframework.beans.TypeConverterSupport.convertIfNecessary(TypeConverterSupport.java:73)
+	at org.springframework.beans.TypeConverterSupport.convertIfNecessary(TypeConverterSupport.java:53)
+	at org.springframework.validation.DataBinder.convertIfNecessary(DataBinder.java:693)
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.resolveArgument(AbstractNamedValueMethodArgumentResolver.java:125)
+	... 47 common frames omitted
+
+2020-05-03 14:31:35.811  WARN 5808 --- [http-nio-8080-exec-7] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "e3r3"]
+2020-05-03 14:31:36.247  INFO 5808 --- [http-nio-8080-exec-6] cn.runic.blog.blog.aspect.LogAspect      : Request : RequestLog{url='http://localhost:8080/comments/52', ip='0:0:0:0:0:0:0:1', classMethod='cn.runic.blog.blog.controller.CommentController.comments', args=[52, {}]}
+2020-05-03 14:31:36.279  INFO 5808 --- [http-nio-8080-exec-6] cn.runic.blog.blog.aspect.LogAspect      : ------------doAfter--------------
+2020-05-03 14:31:36.279  INFO 5808 --- [http-nio-8080-exec-6] cn.runic.blog.blog.aspect.LogAspect      : Result : blog :: commentList 
+2020-05-03 14:31:47.776  INFO 5808 --- [http-nio-8080-exec-2] cn.runic.blog.blog.aspect.LogAspect      : Request : RequestLog{url='http://localhost:8080/comments', ip='0:0:0:0:0:0:0:1', classMethod='cn.runic.blog.blog.controller.CommentController.post', args=[Comment{id=null, nickname='dad', email='123@ac.com', content='uipp', avatar='null', createTime=null, blog=Blog{id=52, title='null', content='null', firstPicture='null', flag='null', views=null, appreciation=false, shareStatement=false, commentabled=false, published=false, recommend=false, createTime=null, updateTime=null, type=null, tags=[], user=null, comments=[], tagIds='null', description='null'}, replyComments=null, parentComment=Comment{id=-1, nickname='null', email='null', content='null', avatar='null', createTime=null, blog=null, replyComments=null, parentComment=null, adminComment=false}, adminComment=false}, org.apache.catalina.session.StandardSessionFacade@e4ce44]}
+2020-05-03 14:31:47.791  INFO 5808 --- [http-nio-8080-exec-2] cn.runic.blog.blog.aspect.LogAspect      : ------------doAfter--------------
+2020-05-03 14:31:47.791  INFO 5808 --- [http-nio-8080-exec-2] cn.runic.blog.blog.aspect.LogAspect      : Result : redirect:/comments/52 
+2020-05-03 14:31:47.791  INFO 5808 --- [http-nio-8080-exec-8] cn.runic.blog.blog.aspect.LogAspect      : Request : RequestLog{url='http://localhost:8080/comments/52', ip='0:0:0:0:0:0:0:1', classMethod='cn.runic.blog.blog.controller.CommentController.comments', args=[52, {}]}
+2020-05-03 14:31:47.823  INFO 5808 --- [http-nio-8080-exec-8] cn.runic.blog.blog.aspect.LogAspect      : ------------doAfter--------------
+2020-05-03 14:31:47.823  INFO 5808 --- [http-nio-8080-exec-8] cn.runic.blog.blog.aspect.LogAspect      : Result : blog :: commentList 
+2020-05-03 14:31:55.529  INFO 5808 --- [http-nio-8080-exec-4] cn.runic.blog.blog.aspect.LogAspect      : Request : RequestLog{url='http://localhost:8080/comments', ip='0:0:0:0:0:0:0:1', classMethod='cn.runic.blog.blog.controller.CommentController.post', args=[Comment{id=null, nickname='dad', email='123@ac.com', content='uoui;pjk.', avatar='null', createTime=null, blog=Blog{id=52, title='null', content='null', firstPicture='null', flag='null', views=null, appreciation=false, shareStatement=false, commentabled=false, published=false, recommend=false, createTime=null, updateTime=null, type=null, tags=[], user=null, comments=[], tagIds='null', description='null'}, replyComments=null, parentComment=Comment{id=59, nickname='null', email='null', content='null', avatar='null', createTime=null, blog=null, replyComments=null, parentComment=null, adminComment=false}, adminComment=false}, org.apache.catalina.session.StandardSessionFacade@e4ce44]}
+2020-05-03 14:31:55.560  INFO 5808 --- [http-nio-8080-exec-4] cn.runic.blog.blog.aspect.LogAspect      : ------------doAfter--------------
+2020-05-03 14:31:55.560  INFO 5808 --- [http-nio-8080-exec-4] cn.runic.blog.blog.aspect.LogAspect      : Result : redirect:/comments/52 
+2020-05-03 14:31:55.576  INFO 5808 --- [http-nio-8080-exec-10] cn.runic.blog.blog.aspect.LogAspect      : Request : RequestLog{url='http://localhost:8080/comments/52', ip='0:0:0:0:0:0:0:1', classMethod='cn.runic.blog.blog.controller.CommentController.comments', args=[52, {}]}
+2020-05-03 14:31:55.607  INFO 5808 --- [http-nio-8080-exec-10] cn.runic.blog.blog.aspect.LogAspect      : ------------doAfter--------------
+2020-05-03 14:31:55.607  INFO 5808 --- [http-nio-8080-exec-10] cn.runic.blog.blog.aspect.LogAspect      : Result : blog :: commentList 
+2020-05-03 14:32:00.084  INFO 5808 --- [http-nio-8080-exec-9] cn.runic.blog.blog.aspect.LogAspect      : Request : RequestLog{url='http://localhost:8080/comments', ip='0:0:0:0:0:0:0:1', classMethod='cn.runic.blog.blog.controller.CommentController.post', args=[Comment{id=null, nickname='dad', email='123@ac.com', content='hkjl;', avatar='null', createTime=null, blog=Blog{id=52, title='null', content='null', firstPicture='null', flag='null', views=null, appreciation=false, shareStatement=false, commentabled=false, published=false, recommend=false, createTime=null, updateTime=null, type=null, tags=[], user=null, comments=[], tagIds='null', description='null'}, replyComments=null, parentComment=Comment{id=60, nickname='null', email='null', content='null', avatar='null', createTime=null, blog=null, replyComments=null, parentComment=null, adminComment=false}, adminComment=false}, org.apache.catalina.session.StandardSessionFacade@e4ce44]}
+2020-05-03 14:32:00.100  INFO 5808 --- [http-nio-8080-exec-9] cn.runic.blog.blog.aspect.LogAspect      : ------------doAfter--------------
+2020-05-03 14:32:00.100  INFO 5808 --- [http-nio-8080-exec-9] cn.runic.blog.blog.aspect.LogAspect      : Result : redirect:/comments/52 
+2020-05-03 14:32:00.100  INFO 5808 --- [http-nio-8080-exec-5] cn.runic.blog.blog.aspect.LogAspect      : Request : RequestLog{url='http://localhost:8080/comments/52', ip='0:0:0:0:0:0:0:1', classMethod='cn.runic.blog.blog.controller.CommentController.comments', args=[52, {}]}
+2020-05-03 14:32:00.147  INFO 5808 --- [http-nio-8080-exec-5] cn.runic.blog.blog.aspect.LogAspect      : ------------doAfter--------------
+2020-05-03 14:32:00.147  INFO 5808 --- [http-nio-8080-exec-5] cn.runic.blog.blog.aspect.LogAspect      : Result : blog :: commentList 
+2020-05-03 14:32:07.120  INFO 5808 --- [http-nio-8080-exec-1] cn.runic.blog.blog.aspect.LogAspect      : Request : RequestLog{url='http://localhost:8080/comments', ip='0:0:0:0:0:0:0:1', classMethod='cn.runic.blog.blog.controller.CommentController.post', args=[Comment{id=null, nickname='dad', email='123@ac.com', content='hjol;', avatar='null', createTime=null, blog=Blog{id=52, title='null', content='null', firstPicture='null', flag='null', views=null, appreciation=false, shareStatement=false, commentabled=false, published=false, recommend=false, createTime=null, updateTime=null, type=null, tags=[], user=null, comments=[], tagIds='null', description='null'}, replyComments=null, parentComment=Comment{id=63, nickname='null', email='null', content='null', avatar='null', createTime=null, blog=null, replyComments=null, parentComment=null, adminComment=false}, adminComment=false}, org.apache.catalina.session.StandardSessionFacade@e4ce44]}
+2020-05-03 14:32:07.135  INFO 5808 --- [http-nio-8080-exec-1] cn.runic.blog.blog.aspect.LogAspect      : ------------doAfter--------------
+2020-05-03 14:32:07.135  INFO 5808 --- [http-nio-8080-exec-1] cn.runic.blog.blog.aspect.LogAspect      : Result : redirect:/comments/52 
+2020-05-03 14:32:07.151  INFO 5808 --- [http-nio-8080-exec-7] cn.runic.blog.blog.aspect.LogAspect      : Request : RequestLog{url='http://localhost:8080/comments/52', ip='0:0:0:0:0:0:0:1', classMethod='cn.runic.blog.blog.controller.CommentController.comments', args=[52, {}]}
+2020-05-03 14:32:07.198  INFO 5808 --- [http-nio-8080-exec-7] cn.runic.blog.blog.aspect.LogAspect      : ------------doAfter--------------
+2020-05-03 14:32:07.198  INFO 5808 --- [http-nio-8080-exec-7] cn.runic.blog.blog.aspect.LogAspect      : Result : blog :: commentList 
+2020-05-03 14:32:25.107  INFO 5808 --- [http-nio-8080-exec-3] cn.runic.blog.blog.aspect.LogAspect      : Request : RequestLog{url='http://localhost:8080/blog/52', ip='0:0:0:0:0:0:0:1', classMethod='cn.runic.blog.blog.controller.IndexController.blog', args=[52, {}]}
+2020-05-03 14:32:25.122  INFO 5808 --- [http-nio-8080-exec-3] cn.runic.blog.blog.aspect.LogAspect      : ------------doAfter--------------
+2020-05-03 14:32:25.122  INFO 5808 --- [http-nio-8080-exec-3] cn.runic.blog.blog.aspect.LogAspect      : Result : blog 
+2020-05-03 14:32:25.200 ERROR 5808 --- [http-nio-8080-exec-9] c.r.b.b.h.ControllerExceptionHandler     : Request URL : http://localhost:8080/blog/e3r3 ,Exception : {}
+
+org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "e3r3"
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.resolveArgument(AbstractNamedValueMethodArgumentResolver.java:133)
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:121)
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:167)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:134)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.NumberFormatException: For input string: "e3r3"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Long.parseLong(Long.java:589)
+	at java.lang.Long.valueOf(Long.java:803)
+	at org.springframework.util.NumberUtils.parseNumber(NumberUtils.java:214)
+	at org.springframework.beans.propertyeditors.CustomNumberEditor.setAsText(CustomNumberEditor.java:115)
+	at org.springframework.beans.TypeConverterDelegate.doConvertTextValue(TypeConverterDelegate.java:429)
+	at org.springframework.beans.TypeConverterDelegate.doConvertValue(TypeConverterDelegate.java:402)
+	at org.springframework.beans.TypeConverterDelegate.convertIfNecessary(TypeConverterDelegate.java:155)
+	at org.springframework.beans.TypeConverterSupport.convertIfNecessary(TypeConverterSupport.java:73)
+	at org.springframework.beans.TypeConverterSupport.convertIfNecessary(TypeConverterSupport.java:53)
+	at org.springframework.validation.DataBinder.convertIfNecessary(DataBinder.java:693)
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.resolveArgument(AbstractNamedValueMethodArgumentResolver.java:125)
+	... 47 common frames omitted
+
+2020-05-03 14:32:25.231  WARN 5808 --- [http-nio-8080-exec-9] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "e3r3"]
+2020-05-03 14:32:25.668  INFO 5808 --- [http-nio-8080-exec-4] cn.runic.blog.blog.aspect.LogAspect      : Request : RequestLog{url='http://localhost:8080/comments/52', ip='0:0:0:0:0:0:0:1', classMethod='cn.runic.blog.blog.controller.CommentController.comments', args=[52, {}]}
+2020-05-03 14:32:25.715  INFO 5808 --- [http-nio-8080-exec-4] cn.runic.blog.blog.aspect.LogAspect      : ------------doAfter--------------
+2020-05-03 14:32:25.715  INFO 5808 --- [http-nio-8080-exec-4] cn.runic.blog.blog.aspect.LogAspect      : Result : blog :: commentList 
