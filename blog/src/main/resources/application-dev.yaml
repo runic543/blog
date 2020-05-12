@@ -4,7 +4,7 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:3306/blog?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
     username: root                                                                    # 此处时区要加上 否则运行失败
-    password: 13691961209
+    password: admin
 
   jpa:
     hibernate:
